@@ -7,15 +7,19 @@ void main(List<String> args) {
     {'nome': 'Espirito Santo', 'valor': 27165.48},
     {'nome': 'outros', 'valor': 19849.53}
   ];
-  double soma = 0.0;
-  for (var estado in estados) {
-    soma += estado['valor'];
+  participacao() {
+    double soma = 0.0;
+    for (var estado in estados) {
+      soma += estado['valor'];
+    }
+    print('Paricipação de cada em estado no valor total:');
+    for (var estado in estados) {
+      final porcentagem = (estado['valor'] / soma) * 100;
+      estado['nome'] != 'outros'
+          ? print('° ${estado['nome']} - $porcentagem %')
+          : print('° Outros - $porcentagem %');
+    }
   }
-  print('Paricipação de cada em estado no valor total:');
-  for (var estado in estados) {
-    final porcentagem = (estado['valor'] / soma) * 100;
-    estado['nome'] != 'outros'
-        ? print('° ${estado['nome']} - $porcentagem %')
-        : print('° Outros - $porcentagem %');
-  }
+
+  participacao();
 }
