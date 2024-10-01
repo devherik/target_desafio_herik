@@ -1,7 +1,4 @@
 void main(List<String> args) {
-  //recebe um vetor de Map(dia do mes, valor, é dia util?) e retorna:
-  //menor valor, maior valor, média, dias acima da média
-  //importante: feriados e fins de semanda que nãohouve faturamento não devem entrar na média
   final faturamento = <Map<String, dynamic>>[
     {'dia': 1, 'valor': 0.0, 'util': false},
     {'dia': 2, 'valor': 2700.0, 'util': true},
@@ -24,6 +21,10 @@ void main(List<String> args) {
     {'dia': 19, 'valor': 0.0, 'util': false},
   ];
   fecharMes() {
+    /* 3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
+    • O menor valor de faturamento ocorrido em um dia do mês;
+    • O maior valor de faturamento ocorrido em um dia do mês;
+    • Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.*/
     double media = 0.0, maior = 0.0, menor = 10000.0, soma = 0.0;
     int acimaMedia = 0, diasUteis = 0;
     for (var dia in faturamento) {
